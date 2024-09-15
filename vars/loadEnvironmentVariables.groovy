@@ -1,4 +1,4 @@
-def call {
+def call() {
     echo "Loading environment variables from the '.env' file..."
 
     // Reads the ".env" file.
