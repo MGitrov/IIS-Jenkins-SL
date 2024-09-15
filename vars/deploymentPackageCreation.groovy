@@ -11,6 +11,6 @@ def call(String packageName) {
 
     # Lists the files to be compressed.
     $itemsToCompress | ForEach-Object { Write-Host "Including: $($_.FullName)" }    
-    Compress-Archive -Path $itemsToCompress.FullName -DestinationPath $env:packageName -Force -Verbose
+    Compress-Archive -Path $itemsToCompress.FullName -DestinationPath $env:PACKAGE_NAME -Force -Verbose
     '''
 }
