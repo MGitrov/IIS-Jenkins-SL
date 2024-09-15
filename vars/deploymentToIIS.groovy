@@ -1,8 +1,8 @@
-def call(String packageName, String deployPath) {
+def call() {
     echo "Deploying to IIS web server..."
 
     powershell '''
-    Start-Process "C:\\Program Files\\IIS\\Microsoft Web Deploy V3\\msdeploy.exe" -ArgumentList @(
+    Start-Process "$env:MSDEPLOY_PATH" -ArgumentList @(
         "-verb:sync",
         "-source:package='$env:WORKSPACE\\$env:PACKAGE_NAME'",
         "-dest:contentPath='$env:DEPLOY_PATH',computerName='localhost'",
