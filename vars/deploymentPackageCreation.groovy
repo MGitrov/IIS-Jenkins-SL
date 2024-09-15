@@ -1,5 +1,5 @@
-def call(String packageName) {
-    echo "Creating deployment package: ${packageName}"
+def call() {
+    echo "Creating deployment package: ${env.PACKAGE_NAME}"
                         
     powershell '''
     Write-Host "Compressing files from: ${env:WORKSPACE}"
